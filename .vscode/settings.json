@@ -1,0 +1,19 @@
+{
+  "vscode-postgres.connections": [
+    {
+      "label": "university (Docker)",
+      "host": "localhost",
+      "port": 5432,
+      "user": "admin",
+      "password": "admin123",
+      "database": "university",
+      "ssl": false
+    }
+  ],
+  "[sql]": {
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.sql": "postgres"
+  }
+}
