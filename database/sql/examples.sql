@@ -81,3 +81,17 @@
 -- $$;
 
 -- SELECT dept_count('Comp. Sci.');
+
+-- WITH RECURSIVE all_prereqs(course_id, prereq_id) AS (
+--   -- Base: direct prereqs
+--   SELECT course_id, prereq_id
+--   FROM prereq
+
+--   UNION ALL
+
+--   -- Recursive: prereqs of prereqs
+--   SELECT p.course_id, p.prereq_id
+--   FROM prereq p, all_prereqs ap
+--   WHERE ap.prereq_id = p.course_id
+-- )
+-- SELECT * FROM all_prereqs;
