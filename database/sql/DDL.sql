@@ -11,8 +11,6 @@ drop table if exists course;
 drop table if exists department;
 drop table if exists classroom;
 
-
-
 create table classroom
 	(building		varchar(15),
 	 room_number		varchar(7),
