@@ -1,6 +1,6 @@
-SELECT name, title
-FROM (student NATURAL JOIN takes)
-JOIN course USING (course_id);
+-- SELECT name, title
+-- FROM (student NATURAL JOIN takes)
+-- JOIN course USING (course_id);
 
 -- CREATE VIEW faculty AS
 -- SELECT id, name, dept_name
@@ -64,3 +64,20 @@ JOIN course USING (course_id);
 -- WHERE id = '99999';
 
 -- COMMIT;
+
+-- -- @block create dept_count function
+-- CREATE OR REPLACE FUNCTION dept_count(d_name VARCHAR(20))
+-- RETURNS INTEGER
+-- LANGUAGE plpgsql
+-- AS $$
+-- DECLARE
+--   d_count INTEGER;
+-- BEGIN
+--   SELECT COUNT(*) INTO d_count
+--   FROM student
+--   WHERE dept_name = d_name;
+--   RETURN d_count;
+-- END;
+-- $$;
+
+-- SELECT dept_count('Comp. Sci.');
