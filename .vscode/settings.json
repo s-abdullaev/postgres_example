@@ -15,5 +15,18 @@
   },
   "files.associations": {
     "*.sql": "sql"
-  }
+  },
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "localhost",
+      "group": "localhost",
+      "database": "university",
+      "username": "admin"
+    }
+  ]
 }
