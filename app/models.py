@@ -43,7 +43,7 @@ class Course(Base):
 class Instructor(Base):
     __tablename__ = "instructor"
 
-    id = Column("id", String(5), primary_key=True)
+    id = Column("id", String(5), primary_key=True, quote=False)
     name = Column(String(20), nullable=False)
     dept_name = Column(String(20), ForeignKey("department.dept_name", ondelete="SET NULL"))
     salary = Column(Numeric(8, 2))
@@ -97,7 +97,7 @@ class Section(Base):
 class Teaches(Base):
     __tablename__ = "teaches"
 
-    id = Column("id", String(5), ForeignKey("instructor.id", ondelete="CASCADE"), primary_key=True)
+    id = Column("id", String(5), ForeignKey("instructor.id", ondelete="CASCADE"), primary_key=True, quote=False)
     course_id = Column(String(8), primary_key=True)
     sec_id = Column(String(8), primary_key=True)
     semester = Column(String(6), primary_key=True)
@@ -115,7 +115,7 @@ class Teaches(Base):
 class Student(Base):
     __tablename__ = "student"
 
-    id = Column("id", String(5), primary_key=True)
+    id = Column("id", String(5), primary_key=True, quote=False)
     name = Column(String(20), nullable=False)
     dept_name = Column(String(20), ForeignKey("department.dept_name", ondelete="SET NULL"))
     tot_cred = Column(Numeric(3, 0))
@@ -126,7 +126,7 @@ class Student(Base):
 class Takes(Base):
     __tablename__ = "takes"
 
-    id = Column("id", String(5), ForeignKey("student.id", ondelete="CASCADE"), primary_key=True)
+    id = Column("id", String(5), ForeignKey("student.id", ondelete="CASCADE"), primary_key=True, quote=False)
     course_id = Column(String(8), primary_key=True)
     sec_id = Column(String(8), primary_key=True)
     semester = Column(String(6), primary_key=True)
