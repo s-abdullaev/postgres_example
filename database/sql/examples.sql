@@ -35,17 +35,24 @@
 --       AND section.year = '2017')
 -- WHERE building = 'Watson';
 
--- CREATE MATERIALIZED VIEW physics_summary AS SELECT course_id, room_number, building 
+-- DROP MATERIALIZED VIEW IF EXISTS physics_summary;
+
+-- CREATE MATERIALIZED VIEW physics_summary AS 
+-- SELECT course_id, room_number, building 
 -- FROM course 
 -- JOIN section USING (course_id) 
 -- WHERE dept_name = 'Physics' WITH DATA;
 
 -- REFRESH MATERIALIZED VIEW physics_summary;
+
 -- SELECT course_id, room_number, building
 -- FROM physics_summary;
+
 -- UPDATE section
--- SET room_number = 100
+-- SET room_number = 125
 -- WHERE course_id = 'PHY-101';
+
+SELECT * FROM classroom;
 
 -- BEGIN TRANSACTION;
 
